@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Maps | Express</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h1> Places for Music, drinks and food lovers</h1>
+      <div class="info">
+        <h3>Current Places</h3>
+
+        <ul>
+          <% restaurants.forEach((restaurant) => { %>
+            <li>
+              <a href="/<%= restaurant._id%>">
+                <%= restaurant.name%> | <%= restaurant.description %>
+              </a>
+               |
+              <a href="/<%= restaurant._id%>/edit">Edit</a>
+               |
+              <a href="/<%= restaurant._id%>/delete">Delete</a>
+            </li>
+          <% }) %>
+        </ul>
+        <a href="/new">Create new restaurant</a>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbBJPvYIaR5ozIx_0-uWiGeO9cK4IxHww">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</html>
